@@ -20,8 +20,8 @@ function SignInForm() {
         return(
             <div>
                 <form>
-                    <input placeholder="E-Mail"/>
-                    <input placeholder="Password"/>
+                    <input required placeholder="E-Mail"/>
+                    <input required placeholder="Password"/>
                     <button onClick={handleSubmit}>Sign In</button>
                 </form>
             </div>

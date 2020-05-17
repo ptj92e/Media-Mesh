@@ -1,0 +1,56 @@
+#newUser {
+    min-height: 40vh;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 10px;
+    background-color: rgb(75,96,118);
+    color: white;
+    border: 15px solid rgb(194,242,220);
+    border-top: none;
+}
+#newUser p {
+    float: left;
+    margin-left: 25%;
+    margin-right: 10px;
+    font-size: 20px;
+}
+#newUser button {
+    margin-top: 10px;
+    margin-left: 25%;
+    margin-bottom: 15px;
+    padding: 5px;
+    display: block;
+    border: 1px solid rgb(75,96,118);
+    border-radius: 15px;
+    background-color: rgb(194,242,220);
+    color: rgb(75,96,118);
+}
+#newUser button:hover {
+    background-color: rgb(75,96,118);
+    color: rgb(194,242,220);
+    border: 1px solid rgb(194,242,220);
+}
+#newForm {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#newForm input {
+    width: 45%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+    padding: 5px;
+    display: block;
+}
+#newForm select {
+    width: 45%;
+    margin-top: 10px;
+    margin-left: 2.5%;
+    font-size: 15px;
+    padding: 5px;
+    display: block;
+}
+#newForm button {
+    margin-left: 0px;
+}
