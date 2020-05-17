@@ -3,6 +3,7 @@ import Welcome from "../components/Welcome/Welcome";
 import SignInForm from "../components/SignInForm/SignInForm";
 import NewUserForm from "../components/NewUserForm/NewUserForm";
 import About from "../components/About/About";
+import "./css/landing.css";
 
 function Landing() {
     const [newUserState, setNewUserState] = useState({
@@ -24,7 +25,7 @@ function Landing() {
     }
 
     return(
-        <div>
+        <div id="landing">
             <Welcome />
             {
             newUserState.newUser === false ?

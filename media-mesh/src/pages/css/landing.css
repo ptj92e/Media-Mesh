@@ -1,0 +1,7 @@
+#landing {
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(75,96,118);
+    color: white;
+    border: 15px solid rgb(194,242,220);
+}

@@ -1,11 +1,5 @@
 #signIn {
-    min-height: 40vh;
-    font-family: 'Roboto', sans-serif;
     padding-top: 10px;
-    background-color: rgb(75,96,118);
-    color: white;
-    border: 15px solid rgb(194,242,220);
-    border-top: none;
 }
 #signIn p {
     float: left;
@@ -36,4 +30,19 @@
     background-color: rgb(75,96,118);
     color: rgb(194,242,220);
     border: 1px solid rgb(194,242,220);
+}
+#signIn button:focus {
+    outline: 0;
+}
+@media only screen and (max-width: 768px) {
+    #signIn p {
+        margin-left: 10%;
+    }
+    #signIn input {
+        margin-left: 10%;
+        width: 80%;
+    }
+    #signIn button {
+        margin-left: 10%;
+    }
 }
