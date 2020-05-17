@@ -19,8 +19,11 @@ function SignInForm() {
     } else {
         return(
             <div>
-                <p>I love my dog.</p>
-                <button onClick={handleSubmit}>Sign In</button>
+                <form>
+                    <input placeholder="E-Mail"/>
+                    <input placeholder="Password"/>
+                    <button onClick={handleSubmit}>Sign In</button>
+                </form>
             </div>
         )
     }

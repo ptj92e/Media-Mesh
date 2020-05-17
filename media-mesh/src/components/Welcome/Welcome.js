@@ -5,7 +5,8 @@ function Welcome() {
     return(
         <div id="welcome">
             <img alt="Media Mesh" src="../static/react/MainLogo.png"/>
-            <h3>A social media website designed for you to share your creations and inspirations with like minded individuals.</h3>
+            <h1>Welcome Back</h1>
+            <p>Sign in to get inspired!</p>
         </div>
     )
 }

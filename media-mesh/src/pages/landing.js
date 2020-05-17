@@ -28,14 +28,18 @@ function Landing() {
             <Welcome />
             {
             newUserState.newUser === false ?
-            <div>
-                <SignInForm />
-                <p>New user? <a onClick={newUser}>Click Me!</a></p>
+            <div id="signIn">
+                <div className="container">
+                    <p>New user?</p><button onClick={newUser}>Create An Account</button>
+                    <SignInForm />
+                </div>
             </div>
             :
-            <div>
-                <NewUserForm />
-                <p>Returning user? <a onClick={returningUser}>Click Me!</a></p>
+            <div id="newUser">
+                <div className="container">
+                    <p>Returning user?</p><button onClick={returningUser}>Sign In</button>
+                    <NewUserForm />
+                </div>
             </div>
             }
             <About />
