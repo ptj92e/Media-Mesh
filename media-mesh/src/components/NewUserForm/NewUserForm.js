@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Redirect } from "react-router-dom";
 import "./NewUserForm.css";
 
 function NewUserForm() {
+    const nameRef = useRef();
+    const emailRef = useRef();
+    const passRef = useRef();
+    const confirmRef = useRef();
+    const artRef = useRef();
     const [signInState, setSignInState] = useState({
         signIn: false
     });
@@ -21,15 +26,15 @@ function NewUserForm() {
             <div>
                 <form id="newForm">
                     <div className="row">
-                        <input required placeholder="Full Name"/>
-                        <input required placeholder="E-Mail"/>
+                        <input required placeholder="Full Name" ref={nameRef}/>
+                        <input required placeholder="E-Mail" ref={emailRef}/>
                     </div>
                     <div className="row">
-                        <input required placeholder="Password"/>
-                        <input required placeholder="Confirm Password"/>
+                        <input type="password" required placeholder="Password" ref={passRef}/>
+                        <input type="password" required placeholder="Confirm Password" ref={confirmRef}/>
                     </div>
                     <div className="row">
-                        <select class="custom-select">
+                        <select class="custom-select" ref={artRef}>
                             <option selected>Choose an Artform</option>
                             <option value="Animation">Animation</option>
                             <option value="Architecture">Architecture</option>

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Redirect } from "react-router-dom";
 import "./SignInForm.css";
 
 function SignInForm() {
+    const emailRef = useRef();
+    const passRef = useRef();
     const [signInState, setSignInState] = useState({
         signIn: false
     });
@@ -20,8 +22,8 @@ function SignInForm() {
         return(
             <div>
                 <form>
-                    <input required placeholder="E-Mail"/>
-                    <input required placeholder="Password"/>
+                    <input required placeholder="E-Mail" ref={emailRef}/>
+                    <input required placeholder="Password" ref={passRef}/>
                     <button onClick={handleSubmit}>Sign In</button>
                 </form>
             </div>
