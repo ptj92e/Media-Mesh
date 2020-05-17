@@ -1,10 +1,19 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
+import pymysql
+import secrets
+
+conn = "mysql+pymysql://{0}:{1}@{2}/{3}".format(secrets.dbuser, secrets.dbpass, secrets.dbhost, secrets.dbname)
 
 app = Flask("__name__")
 
-@app.route("/")
-def index():
-    return render_template("index.html", token="Hello Flask_React")
+app.config["SQLALCHEMY_DATABASE_URI"] = conn
+db = SQLAlchemy(app)
+
+import routes.views
+
+db.create_all()
+db.session.commit()
 
 if __name__ == "__main__":
     app.run(debug=True)

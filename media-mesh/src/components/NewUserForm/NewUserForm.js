@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Redirect } from "react-router-dom";
+import API from "../../utils/API";
 import "./NewUserForm.css";
 
 function NewUserForm() {
@@ -14,6 +15,7 @@ function NewUserForm() {
 
     const handleSubmit = e => {
         e.preventDefault();
+        API.newUser();
         setSignInState({
             signIn: true
         });
