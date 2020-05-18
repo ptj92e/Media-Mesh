@@ -1,5 +1,9 @@
 from __main__ import app
 from flask import Flask, render_template
+import classes.Comment
+import classes.Friend
+import classes.Post
+import classes.User
 
 @app.route("/")
 def index():
