@@ -22,9 +22,10 @@ function NewUserForm() {
                 password: passRef.current.value,
                 artform: artRef.current.value
             }).then(
-                setSignInState({
-                    signIn: true
-                })
+                console.log("Hopefully")
+                // setSignInState({
+                //     signIn: true
+                // })
             );
         } else {
             alert("The password fields must match.");
