@@ -1,4 +1,4 @@
-from __main__ import app, db
+from __main__ import app, db, bcrypt
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from classes.Comment import Comment
@@ -22,7 +22,7 @@ def new_user():
 
         name = req.get("name")
         email = req.get("email")
-        password = req.get("password")
+        password = bcrypt.generate_password_hash(req.get("password")).decode("utf-8")
         artform = req.get("artform")
 
         new_user = User(name, email, password, artform)
