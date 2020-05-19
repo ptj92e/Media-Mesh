@@ -1,5 +1,5 @@
 from __main__ import app
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import classes.Comment
 import classes.Friend
 import classes.Post
@@ -15,4 +15,4 @@ def login():
 
 @app.route("/api/user", methods=["POST"])
 def user():
-    print("New User")
+    return print(request.form["name"])
