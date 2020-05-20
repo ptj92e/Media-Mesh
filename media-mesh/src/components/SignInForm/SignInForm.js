@@ -12,10 +12,15 @@ function SignInForm() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        API.signIn();
-        setSignInState({
-            signIn: true
+        API.signIn({
+            email: emailRef.current.value,
+            password: passRef.current.value
+        }).then(res => {
+            console.log(res);
         });
+        // setSignInState({
+        //     signIn: true
+        // });
     };
 
     if (signInState.signIn === true) {
@@ -23,10 +28,10 @@ function SignInForm() {
     } else {
         return(
             <div>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <input required placeholder="E-Mail" ref={emailRef}/>
-                    <input required placeholder="Password" ref={passRef}/>
-                    <button onClick={handleSubmit}>Sign In</button>
+                    <input type="password" required placeholder="Password" ref={passRef}/>
+                    <button type="submit">Sign In</button>
                 </form>
             </div>
         )

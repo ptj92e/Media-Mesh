@@ -1,5 +1,5 @@
 from __main__ import app, db, bcrypt
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from classes.Comment import Comment
 from classes.Friend import Friend
@@ -12,7 +12,22 @@ def index():
 
 @app.route("/api/login", methods=["POST"])
 def login():
-    print("Logged In")
+    if request.method == "POST":
+        session.pop("id", None)
+        req = request.get_json()
+        users = User.query.all()
+        for user in users:
+            if user.email == req.get("email") and bcrypt.check_password_hash(user.password, req.get("password")):
+                session["id"] = user.id
+                return jsonify(user.__repr__())
+            else:
+                pass
+        
+    else:
+        print("No User")
+    return "Hello"
+        
+
 
 @app.route("/api/user", methods=["POST"])
 def new_user():

@@ -22,10 +22,9 @@ function NewUserForm() {
                 password: passRef.current.value,
                 artform: artRef.current.value
             }).then(
-                console.log("Hopefully")
-                // setSignInState({
-                //     signIn: true
-                // })
+                setSignInState({
+                    signIn: true
+                })
             );
         } else {
             alert("The password fields must match.");
@@ -37,7 +36,7 @@ function NewUserForm() {
     } else {
         return (
             <div>
-                <form id="newForm">
+                <form id="newForm" onSubmit={handleSubmit}>
                     <div className="row">
                         <input required placeholder="Full Name" ref={nameRef} />
                         <input required placeholder="E-Mail" ref={emailRef} />
@@ -70,7 +69,7 @@ function NewUserForm() {
                             <option value="Writing">Writing</option>
                         </select>
                     </div>
-                    <button onClick={handleSubmit}>Create Account</button>
+                    <button type="submit">Create Account</button>
                 </form>
             </div>
         )

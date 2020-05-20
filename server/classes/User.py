@@ -1,5 +1,6 @@
 from __main__ import db
 from datetime import datetime
+from flask import jsonify
 
 class User(db.Model):
     __tablename__ = "user"
@@ -17,4 +18,7 @@ class User(db.Model):
         self.artform = artform
 
     def __repr__(self):
-        return "<User %r>" % self.id
+        return {"id": self.id,
+                "name": self.name,
+                "email": self.email,
+                "artform": self.artform}
