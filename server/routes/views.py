@@ -19,13 +19,23 @@ def login():
         for user in users:
             if user.email == req.get("email") and bcrypt.check_password_hash(user.password, req.get("password")):
                 session["id"] = user.id
-                return jsonify(user.__repr__())
+                return jsonify(user.__repr__(), "logged-in")
             else:
                 pass
-        
+        return "Incorrect username or password."    
     else:
-        print("No User")
-    return "Hello"
+        return "No User"
+
+@app.route("/api/logout", methods=["POST"])
+def logout():
+    if request.method == "POST":
+        if session:
+            session.pop("id", None)
+            return "Signed Out"
+        else:
+            return "There is no session."
+    else:
+        return "You are not logged in."
         
 
 

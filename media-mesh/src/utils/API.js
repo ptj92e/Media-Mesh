@@ -6,5 +6,8 @@ export default {
     }, 
     newUser: function(userData) {
         return axios.post("/api/user", userData);
+    },
+    signOut: function() {
+        return axios.post("/api/logout");
     }
 };

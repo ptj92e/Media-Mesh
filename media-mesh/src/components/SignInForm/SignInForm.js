@@ -16,11 +16,14 @@ function SignInForm() {
             email: emailRef.current.value,
             password: passRef.current.value
         }).then(res => {
-            console.log(res);
+            if (res.data[1] === "logged-in") {
+                setSignInState({
+                    signIn: true
+                });
+            } else {
+                alert("Username or password is incorrect");
+            }
         });
-        // setSignInState({
-        //     signIn: true
-        // });
     };
 
     if (signInState.signIn === true) {
