@@ -13,10 +13,10 @@ function Navbar() {
         e.preventDefault();
         API.signOut()
             .then(res => {
-                if (res.data === "Signed Out") {
+                if (res.status === 200) {
                     setLoginState({
                         loggedIn: false
-                    })
+                    });
                 } else {
                     alert("You are not signed in.")
                 }

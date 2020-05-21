@@ -1,5 +1,5 @@
 from __main__ import app, db, bcrypt
-from flask import Flask, render_template, request, session, jsonify
+from flask import Flask, render_template, request, session, jsonify,Response
 from flask_sqlalchemy import SQLAlchemy
 from classes.Comment import Comment
 from classes.Friend import Friend
@@ -22,9 +22,9 @@ def login():
                 return jsonify(user.__repr__(), "logged-in")
             else:
                 pass
-        return "Incorrect username or password."    
+        return Response(status=404)    
     else:
-        return "No User"
+        return Response(status=404)
 
 @app.route("/api/check_login", methods=["POST"])
 def check_login():
@@ -40,9 +40,9 @@ def logout():
             session.pop("id", None)
             return "Signed Out"
         else:
-            return "There is no session."
+            return Response(status=404)
     else:
-        return "You are not logged in."
+        return Response(status=401)
         
 @app.route("/api/user", methods=["POST"])
 def new_user():
@@ -62,6 +62,6 @@ def new_user():
             db.session.commit()
             return "New user created."
         except:
-            return "There was an error creating a new user."
+            return Response(status=400)
     else: 
-        return "Not JSON"
+        return Response(status=405)
