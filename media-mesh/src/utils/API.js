@@ -9,5 +9,8 @@ export default {
     },
     signOut: function() {
         return axios.post("/api/logout");
+    },
+    checkSignIn: function() {
+        return axios.post("/api/check_login");
     }
 };

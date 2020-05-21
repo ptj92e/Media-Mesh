@@ -26,6 +26,13 @@ def login():
     else:
         return "No User"
 
+@app.route("/api/check_login", methods=["POST"])
+def check_login():
+    if request.method == "POST":
+        user_id = session["id"]
+        user = User.query.get(user_id)
+        return jsonify(user.__repr__())
+
 @app.route("/api/logout", methods=["POST"])
 def logout():
     if request.method == "POST":
@@ -37,12 +44,10 @@ def logout():
     else:
         return "You are not logged in."
         
-
-
 @app.route("/api/user", methods=["POST"])
 def new_user():
     if request.method == "POST":
-
+        session.pop("id", None)
         req = request.get_json()
 
         name = req.get("name")

@@ -1,11 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
+import ProfileHead from "../components/ProfileHead/ProfileHead";
 
 function Profile() {
     return(
         <div>
             <Navbar />
-            <h1>Profile</h1>
+            <ProfileHead />
         </div>
     )
 }

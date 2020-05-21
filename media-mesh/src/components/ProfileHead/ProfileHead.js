@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
-import "./UserFeed.css";
+import "./ProfileHead.css";
 
-function UserFeed() {
+function ProfileHead() {
     const [userState, setUserState] = useState({});
 
     useEffect(() => {
@@ -15,7 +15,8 @@ function UserFeed() {
     return(
         <div>
             <h1>Hello {userState.name}</h1>
+            <h1>{userState.artform}</h1>
         </div>
     );
 };
-export default UserFeed;
+export default ProfileHead;
