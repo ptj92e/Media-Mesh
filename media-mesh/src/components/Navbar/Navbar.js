@@ -24,24 +24,27 @@ function Navbar() {
     };
 
     if (loginState.loggedIn === false) {
-       return <Redirect to="/" />
+        return <Redirect to="/" />
     } else {
         return (
             <div>
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <Link to="/home">Media Mesh</Link>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-        
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <nav className="navbar navbar-expand-md">
+                    <div className="container">
+
+                        <Link to="/home"><img alt="Media Mesh" src="../static/react/NavLogo.png" /></Link>
+                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
                         <NavbarSearch />
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <Link to="/profile">Profile</Link>
-                                <Link onClick={handleClick}>Logout</Link>
-                            </li>
-                        </ul>
+
+                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul className="navbar-nav">
+                                <li className="nav-item">
+                                    <Link to="/profile">Profile</Link>
+                                    <Link onClick={handleClick}>Logout</Link>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </nav>
             </div>

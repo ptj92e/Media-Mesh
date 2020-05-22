@@ -1,0 +1,18 @@
+.navbar {
+    background-color: rgb(75,96,118);
+}
+.navbar a {
+    margin-left: 15px;
+    color: white;
+}
+.navbar a:hover {
+    text-decoration: none;
+    color: rgb(194,242,220);
+}
+.navbar img {
+    height: auto;
+    width: 75px;
+}
+.navbar-collapse {
+    justify-content: flex-end;
+}

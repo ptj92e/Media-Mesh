@@ -1,0 +1,20 @@
+#navSearch {
+    width: 50%;
+}
+#navSearch input {
+    width: 400px;
+    margin-left: 10px;
+}
+#navSearch button {
+    margin-left: 10px;
+    padding: 5px;
+    border: 1px solid rgb(75,96,118);
+    border-radius: 15px;
+    background-color: rgb(194,242,220);
+    color: rgb(75,96,118);
+}
+#navSearch button:hover {
+    background-color: rgb(75,96,118);
+    color: rgb(194,242,220);
+    border: 1px solid rgb(194,242,220);
+}
