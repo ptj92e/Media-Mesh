@@ -24,6 +24,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = conn
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config.update(SECRET_KEY=os.urandom(16))
 db = SQLAlchemy(app)
+# from db import db
 
 import classes.Comment
 import classes.Friend

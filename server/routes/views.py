@@ -1,4 +1,5 @@
-from __main__ import app, db, bcrypt
+from __main__ import app, bcrypt, db
+# from db import db
 from flask import Flask, render_template, request, session, jsonify,Response
 from flask_sqlalchemy import SQLAlchemy
 from classes.Comment import Comment
