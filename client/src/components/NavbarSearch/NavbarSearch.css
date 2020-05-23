@@ -32,3 +32,11 @@
         width: 175px;
     }
 }
+@media only screen and (max-width: 500px) {
+    #navSearch {
+        width: 60%;
+    }
+    #navSearch input {
+        width: 125px;
+    }
+}
