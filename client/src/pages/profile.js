@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import API from "../utils/API";
 import Navbar from "../components/Navbar/Navbar";
 import ProfileHead from "../components/ProfileHead/ProfileHead";
+import Footer from "../components/Footer/Footer";
 
 function Profile() {
     const [signInState, setSignInState] = useState({
@@ -29,6 +30,7 @@ function Profile() {
             <div>
                 <Navbar />
                 <ProfileHead />
+                <Footer />
             </div>
         );
     };

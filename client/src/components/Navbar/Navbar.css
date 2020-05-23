@@ -11,8 +11,38 @@
 }
 .navbar img {
     height: auto;
-    width: 75px;
+    width: 60px;
+    margin-right: 20px;
+}
+.navbar button:focus {
+    outline: 0;
 }
 .navbar-collapse {
     justify-content: flex-end;
+}
+.fa-sliders-h {
+    padding: 8px;
+    color: rgb(194,242,220);
+    border: 3px solid rgb(194,242,220);
+    border-radius: 10px;
+}
+.fa-sliders-h:hover {
+    background-color: rgb(194,242,220);
+    color: rgb(75,96,118);
+    border: 3px solid rgb(75,96,118);
+    transition: 0.25s;
+}
+@media only screen and (max-width: 767px) {
+    .navbar {
+        padding: 0px;
+        padding-left: 10px;
+    }
+    .navbar a {
+        display: block;
+        margin-left: 0px;
+    }
+    .navbar-collapse {
+        margin-top: 10px;
+        padding-bottom: 10px;
+    }
 }

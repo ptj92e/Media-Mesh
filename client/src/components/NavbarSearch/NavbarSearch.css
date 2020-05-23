@@ -1,8 +1,9 @@
 #navSearch {
-    width: 50%;
+    width: 75%;
 }
 #navSearch input {
     width: 400px;
+    padding: 5px;
     margin-left: 10px;
 }
 #navSearch button {
@@ -17,4 +18,17 @@
     background-color: rgb(75,96,118);
     color: rgb(194,242,220);
     border: 1px solid rgb(194,242,220);
+}
+@media only screen and (max-width: 1000px) {
+    #navSearch input {
+        width: 350px;
+    }
+}
+@media only screen and (max-width: 780px) {
+    #navSearch {
+        width: 60%;
+    }
+    #navSearch input {
+        width: 175px;
+    }
 }
