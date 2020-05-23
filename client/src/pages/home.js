@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
-import UserFeed from "../components/UserFeed/UserFeed";
+import NewsFeed from "../components/NewsFeed/NewsFeed";
 import API from "../utils/API";
 
 function Home() {
@@ -28,7 +28,9 @@ function Home() {
         return(
             <div>
                 <Navbar />
-                <UserFeed />
+                <div className="container">
+                    <NewsFeed />
+                </div>
             </div>
         )
     };

@@ -29,7 +29,9 @@ function Profile() {
         return(
             <div>
                 <Navbar />
-                <ProfileHead />
+                <div className="container">
+                    <ProfileHead />
+                </div>
                 <Footer />
             </div>
         );

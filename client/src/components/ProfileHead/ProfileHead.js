@@ -13,8 +13,8 @@ function ProfileHead() {
     }, []);
 
     return(
-        <div>
-            <h1>Hello {userState.name}</h1>
+        <div id="profileInfo">
+            <h1>{userState.name}</h1>
             <h1>{userState.artform}</h1>
         </div>
     );
