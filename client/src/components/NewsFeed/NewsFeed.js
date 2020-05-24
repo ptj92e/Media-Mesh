@@ -13,8 +13,20 @@ function NewsFeed() {
     }, []);
 
     return(
-        <div>
-            <h1>This is everyone's feed.</h1>
+        <div id="newsFeed">
+            <ul>
+                <li>
+                    <div className="row">
+                        <img className="userProfile" alt="profile" src="/images/nova.jpg"/>
+                        <p>{userState.name}</p>
+                        <i className="fas fa-trash-alt"></i>
+                    </div>
+                    <div>
+                        <img className="postImage" alt="post" src="/images/nova.jpg"/>
+                        <p>This is my dog Nova. She is really great and is very sweet.</p>
+                    </div>
+                </li>
+            </ul>
         </div>
     );
 };

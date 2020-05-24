@@ -1,6 +1,7 @@
 footer p {
     text-align: center;
     padding: 5px;
+    margin: 0px;
     color: rgb(194,242,220);
     background-color: rgb(75,96,118);
 }

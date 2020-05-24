@@ -1,5 +1,8 @@
 .navbar {
     background-color: rgb(75,96,118);
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 .navbar a {
     margin-left: 15px;
