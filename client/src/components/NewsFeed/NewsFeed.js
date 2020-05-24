@@ -14,7 +14,7 @@ function NewsFeed() {
 
     return(
         <div>
-            <h1>Hello {userState.name}</h1>
+            <h1>This is everyone's feed.</h1>
         </div>
     );
 };

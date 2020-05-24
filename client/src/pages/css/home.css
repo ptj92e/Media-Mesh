@@ -1,0 +1,11 @@
+#home {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    margin-top: 20px;
+    justify-content: center;
+}
+#homeFeed {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 40%;
+}

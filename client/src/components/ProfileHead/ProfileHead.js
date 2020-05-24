@@ -14,8 +14,9 @@ function ProfileHead() {
 
     return(
         <div id="profileInfo">
-            <h1>{userState.name}</h1>
-            <h1>{userState.artform}</h1>
+            <img alt="profile" src="/images/nova.jpg"/>
+            <h3>{userState.name}</h3>
+            <p>{userState.artform}</p>
         </div>
     );
 };
