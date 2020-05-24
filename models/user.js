@@ -21,6 +21,10 @@ module.exports = function (sequelize, DataTypes) {
         artform: {
             type: DataTypes.STRING,
             allowNull: false
+        }, 
+        picture: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
     });
 

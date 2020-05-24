@@ -17,7 +17,7 @@ function NewsFeed() {
             <ul>
                 <li>
                     <div className="row">
-                        <img className="userProfile" alt="profile" src="/images/nova.jpg"/>
+                        <img className="userProfile" alt="profile" src={userState.picture}/>
                         <p>{userState.name}</p>
                         <i className="fas fa-trash-alt"></i>
                     </div>

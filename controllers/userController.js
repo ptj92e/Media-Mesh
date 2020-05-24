@@ -18,5 +18,22 @@ module.exports = {
                 res.json(dbUser);
             });
         }
+    },
+    updatePic: function (req, res) {
+        db.User.update({
+            picture: req.body.picture
+        }, {
+            where: {
+                id: req.params.id
+            }
+        }).then(() => {
+            db.User.findOne({
+                where: {
+                    id: req.params.id
+                }
+            }).then(dbUser => {
+                res.json(dbUser);
+            });
+        });    
     }
 }

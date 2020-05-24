@@ -12,5 +12,8 @@ export default {
     },
     userInfo: function() {
         return axios.post("/api/user/info");
+    },
+    profilePic: function(picInfo) {
+        return axios.put("/api/profile_pic/" + picInfo.id, {picture: picInfo.picture});
     }
 };

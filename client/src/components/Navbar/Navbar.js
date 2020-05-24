@@ -35,7 +35,7 @@ function Navbar() {
                         <Link to="/home"><img alt="Media Mesh" src="/images/NavLogo.png" /></Link>
                         <NavbarSearch />
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-sliders-h fa-lg"></i>
+                        <i className="fas fa-sliders-h fa-lg"></i>
                         </button>
 
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
