@@ -1,0 +1,43 @@
+#newPost {
+    background-color: #fff;
+    border: 1px solid rgb(190,190,190);
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15),
+                0 2px 3px rgba(0, 0, 0, 0.2);
+}
+#newPost .row {
+    margin: 0px;
+    margin-bottom: 10px;
+    padding-left: auto;
+    padding-right: auto;
+}
+#newPost form {
+    width: 90%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#newPost h3 {
+    text-align: center;
+}
+#newPost input {
+    margin: 0px;
+    width: 50%;
+    font-size: 15px;
+    padding: 5px;
+}
+#newPost textarea {
+    width: 100%;
+    font-size: 15px;
+    padding: 5px;
+}
+#newPost button {
+    background-color: rgb(0,116,177);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+#newPost button:hover {
+    background-color: rgb(0, 83, 177);
+}
