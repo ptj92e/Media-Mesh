@@ -20,5 +20,17 @@ module.exports = {
                 res.json(dbPost);
             });
         }
+    },
+    userFeed: function(req, res) {
+        db.Posts.findAll({
+            where: {
+                UserId: req.params.id
+            },
+            order: [
+                ["id", "DESC"]
+            ]
+        }).then(dbPost => {
+            res.json(dbPost);
+        });
     }
 }

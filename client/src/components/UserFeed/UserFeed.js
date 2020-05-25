@@ -4,28 +4,51 @@ import "./UserFeed.css";
 
 function UserFeed() {
     const [userState, setUserState] = useState({});
+    const [postState, setPostState] = useState([]);
 
     useEffect(() => {
         API.userInfo()
             .then(res => {
                 setUserState(res.data);
+                API.userFeed(res.data.id)
+                    .then(res => {
+                        setPostState(res.data);
+                    });
             });
     }, []);
 
-    return(
+    return (
         <div id="userFeed">
             <ul>
-                <li>
-                    <div className="row">
-                        <img className="userProfile" alt="profile" src="/images/nova.jpg"/>
-                        <p>{userState.name}</p>
-                        <i className="fas fa-trash-alt"></i>
-                    </div>
-                    <div>
-                        <img className="postImage" alt="post" src="/images/nova.jpg"/>
-                        <p>This post is on my Profile Page.</p>
-                    </div>
-                </li>
+                {
+                    postState.map(post =>
+                        // console.log(post)
+                        post.url === null ?
+                            <li key={post.id} id={post.id}>
+                                <div className="row">
+                                    <img className="userProfile" alt="profile" src={userState.picture} />
+                                    <p>{userState.name}</p>
+                                    <i className="fas fa-trash-alt"></i>
+                                </div>
+                                <div>
+                                    <h3>{post.title}</h3>
+                                    <p>{post.post}</p>
+                                </div>
+                            </li>
+                            :
+                            <li key={post.id} id={post.id}>
+                                <div className="row">
+                                    <img className="userProfile" alt="profile" src={userState.picture} />
+                                    <p>{userState.name}</p>
+                                    <i className="fas fa-trash-alt"></i>
+                                </div>
+                                <div>
+                                    <h3>{post.title}</h3>
+                                    <img className="postImage" alt="post" src={post.url} />
+                                    <p>{post.post}</p>
+                                </div>
+                            </li>
+                    )}
             </ul>
         </div>
     );

@@ -13,6 +13,7 @@ function Profile() {
     const [signInState, setSignInState] = useState({
         signedIn: true
     });
+    const [userState, setUserState] = useState({});
 
     useEffect(() => {
         API.userInfo()
@@ -22,7 +23,7 @@ function Profile() {
                         signedIn: false
                     });
                 } else {
-                    return;
+                    setUserState(res.data);
                 }
             })
     }, []);
@@ -36,7 +37,9 @@ function Profile() {
                 <div className="row" id="profile">
                     <ProfileHead />
                     <div id="profileFeed">
-                        <NewPost />
+                        <NewPost 
+                            user={userState}
+                        />
                         <UserFeed />
                     </div>
                     <FriendList />

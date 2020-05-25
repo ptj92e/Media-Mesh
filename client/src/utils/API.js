@@ -18,5 +18,8 @@ export default {
     },
     newPost: function(postInfo) {
         return axios.post("/api/post/", postInfo);
+    },
+    userFeed: function(id) {
+        return axios.get("/api/post/" + id);
     }
 };
