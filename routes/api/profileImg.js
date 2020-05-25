@@ -3,6 +3,6 @@ const userController = require("../../controllers/userController");
 
 router
     .route("/:id")
-    .put(userController.updatePic)
+    .put(userController.updatePic);
 
 module.exports = router;

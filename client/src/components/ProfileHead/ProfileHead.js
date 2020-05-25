@@ -8,8 +8,9 @@ function ProfileHead() {
         window.cloudinary.openUploadWidget({
             cloud_name: "dr74dmsmp",
             upload_preset: "dogpy375",
-            tags: ["media"]},
-            function(err, res) {
+            tags: ["media"]
+        },
+            function (err, res) {
                 if (err) {
                     return;
                 } else {
@@ -21,8 +22,8 @@ function ProfileHead() {
                     });
                 }
             });
-        };
-    
+    };
+
 
     useEffect(() => {
         API.userInfo()
@@ -31,12 +32,12 @@ function ProfileHead() {
             });
     }, []);
 
-    return(
+    return (
         <div id="profileInfo">
             {userState.picture === null ?
-            <h3>Upload A Profile Picture!</h3>
-            :
-            <img alt="profile" src={userState.picture}/>
+                <h3>Upload A Profile Picture!</h3>
+                :
+                <img alt="profile" src={userState.picture} />
             }
             <a href="#"><i onClick={uploadWidget} className="fas fa-portrait fa-2x"></i></a>
             <h3 id={userState.id}>{userState.name}</h3>

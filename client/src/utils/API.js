@@ -15,5 +15,8 @@ export default {
     },
     profilePic: function(picInfo) {
         return axios.put("/api/profile_pic/" + picInfo.id, {picture: picInfo.picture});
+    },
+    newPost: function(postInfo) {
+        return axios.post("/api/post/", postInfo);
     }
 };
