@@ -17,17 +17,26 @@ function NewsFeed() {
             });
     }, []);
 
+    const handleDelete = e => {
+        e.preventDefault();
+        if (userState.id === parseInt(e.target.getAttribute("name"))) {
+            API.deletePost(e.target.id);
+        } else {
+            return;
+        }
+    }
+
     return(
         <div id="newsFeed">
             <ul>
             {
                     postState.map(post =>
                         post.url === null ?
-                            <li key={post.id} id={post.id}>
+                            <li key={post.id}>
                                 <div className="row">
                                     <img className="userProfile" alt="profile" src={post.User.picture} />
                                     <p>{post.User.name}</p>
-                                    <i className="fas fa-trash-alt"></i>
+                                    <i name={post.User.id} onClick={handleDelete} id={post.id} className="fas fa-trash-alt"></i>
                                 </div>
                                 <div>
                                     <h3>{post.title}</h3>
@@ -35,11 +44,11 @@ function NewsFeed() {
                                 </div>
                             </li>
                             :
-                            <li key={post.id} id={post.id}>
+                            <li key={post.id}>
                                 <div className="row">
                                     <img className="userProfile" alt="profile" src={post.User.picture} />
                                     <p>{post.User.name}</p>
-                                    <i className="fas fa-trash-alt"></i>
+                                    <i name={post.User.id}onClick={handleDelete} id={post.id} className="fas fa-trash-alt"></i>
                                 </div>
                                 <div>
                                     <h3>{post.title}</h3>

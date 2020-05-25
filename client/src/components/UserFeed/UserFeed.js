@@ -17,17 +17,22 @@ function UserFeed() {
             });
     }, []);
 
+    const handleDelete = e => {
+        e.preventDefault();
+        API.deletePost(e.target.id);
+    }
+
     return (
         <div id="userFeed">
             <ul>
                 {
                     postState.map(post =>
                         post.url === null ?
-                            <li key={post.id} id={post.id}>
+                            <li key={post.id}>
                                 <div className="row">
                                     <img className="userProfile" alt="profile" src={userState.picture} />
                                     <p>{userState.name}</p>
-                                    <i className="fas fa-trash-alt"></i>
+                                    <i onClick={handleDelete} id={post.id} className="fas fa-trash-alt"></i>
                                 </div>
                                 <div>
                                     <h3>{post.title}</h3>
@@ -35,11 +40,11 @@ function UserFeed() {
                                 </div>
                             </li>
                             :
-                            <li key={post.id} id={post.id}>
+                            <li key={post.id}>
                                 <div className="row">
                                     <img className="userProfile" alt="profile" src={userState.picture} />
                                     <p>{userState.name}</p>
-                                    <i className="fas fa-trash-alt"></i>
+                                    <i onClick={handleDelete} id={post.id} className="fas fa-trash-alt"></i>
                                 </div>
                                 <div>
                                     <h3>{post.title}</h3>

@@ -13,4 +13,8 @@ router
     .route("/")
     .get(postController.newsFeed);
 
+router
+    .route("/:id")
+    .delete(postController.deletePost);
+
 module.exports = router;

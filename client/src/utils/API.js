@@ -24,5 +24,8 @@ export default {
     },
     newsFeed: function() {
         return axios.get("/api/post");
+    },
+    deletePost: function(id) {
+        return axios.delete("/api/post/" + id);
     }
 };

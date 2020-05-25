@@ -13,7 +13,6 @@ function Navbar() {
         e.preventDefault();
         API.signOut()
             .then(res => {
-                console.log(res);
                 if (res.status === 200) {
                     setLoginState({
                         loggedIn: false

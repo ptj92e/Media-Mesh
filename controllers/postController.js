@@ -46,5 +46,12 @@ module.exports = {
         }).then(dbPost => {
             res.json(dbPost);
         });
+    },
+    deletePost: function(req, res) {
+        db.Posts.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
     }
 }

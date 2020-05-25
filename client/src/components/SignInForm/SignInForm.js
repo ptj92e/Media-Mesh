@@ -16,7 +16,6 @@ function SignInForm() {
             email: emailRef.current.value,
             password: passRef.current.value
         }).then(res => {
-            console.log(res);
             if (res.data.id) {
                 setSignInState({
                     signIn: true
