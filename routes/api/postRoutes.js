@@ -9,4 +9,8 @@ router
     .route("/:id")
     .get(postController.userFeed);
 
+router
+    .route("/")
+    .get(postController.newsFeed);
+
 module.exports = router;

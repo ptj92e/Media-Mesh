@@ -21,5 +21,8 @@ export default {
     },
     userFeed: function(id) {
         return axios.get("/api/post/" + id);
+    },
+    newsFeed: function() {
+        return axios.get("/api/post");
     }
 };

@@ -22,7 +22,6 @@ function UserFeed() {
             <ul>
                 {
                     postState.map(post =>
-                        // console.log(post)
                         post.url === null ?
                             <li key={post.id} id={post.id}>
                                 <div className="row">

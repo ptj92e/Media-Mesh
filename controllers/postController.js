@@ -32,5 +32,19 @@ module.exports = {
         }).then(dbPost => {
             res.json(dbPost);
         });
+    },
+    newsFeed: function(req, res) {
+        db.Posts.findAll({
+            include: [
+                {
+                    model: db.User
+                }
+            ],
+            order: [
+                ["id", "DESC"]
+            ]
+        }).then(dbPost => {
+            res.json(dbPost);
+        });
     }
 }
