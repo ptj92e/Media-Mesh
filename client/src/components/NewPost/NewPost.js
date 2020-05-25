@@ -65,8 +65,8 @@ function NewPost(props) {
                         ref={titleRef}
                     />
                     <button onClick={uploadWidget}>Upload an Image</button>
-                    <p>{imgState.imgURL}</p>
                 </div>
+                <p>Picture URL: {imgState.imgURL}</p>
                 <div className="row">
                     <textarea
                         required

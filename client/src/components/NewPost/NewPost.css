@@ -21,9 +21,14 @@
 #newPost h3 {
     text-align: center;
 }
+#newPost p {
+    width: 100%;
+    overflow-x: hidden;
+}
 #newPost input {
     margin: 0px;
-    width: 50%;
+    margin-right: 4%;
+    width: 70%;
     font-size: 15px;
     padding: 5px;
 }
