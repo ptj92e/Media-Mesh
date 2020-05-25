@@ -46,3 +46,15 @@
 #newPost button:hover {
     background-color: rgb(0, 83, 177);
 }
+@media screen and (max-width: 1200px) {
+    #newPost input {
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width: 600px) {
+    #newPost {
+        margin-left: 0px;
+    }
+}

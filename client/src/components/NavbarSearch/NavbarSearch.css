@@ -34,9 +34,9 @@
 }
 @media only screen and (max-width: 500px) {
     #navSearch {
-        width: 60%;
+        width: 50%;
     }
     #navSearch input {
-        width: 125px;
+        width: 75px;
     }
 }

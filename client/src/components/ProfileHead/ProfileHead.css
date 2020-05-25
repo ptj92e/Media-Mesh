@@ -23,11 +23,16 @@
     color: rgb(0, 83, 177);
 }
 #profileInfo img {
-    height: 150px;
-    width: 150px;
+    height: auto;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
     border: 1px solid rgb(190,190,190);
     border-radius: 50%;
+}
+@media screen and (max-width: 600px) {
+    #profileInfo {
+        width: 30%;
+    }
 }
