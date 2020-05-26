@@ -34,6 +34,10 @@
     right: 10px;
     color: red;
 }
+.fa-trash-alt:hover {
+    cursor: pointer;
+    color: rgb(139, 0, 0);
+}
 .postImage {
     height: auto;
     width: 100%;

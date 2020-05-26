@@ -40,7 +40,9 @@ function Profile() {
                         <NewPost 
                             user={userState}
                         />
-                        <UserFeed />
+                        <UserFeed 
+                            user={userState}
+                        />
                     </div>
                     <FriendList />
                 </div>

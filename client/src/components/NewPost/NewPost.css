@@ -31,11 +31,15 @@
     width: 70%;
     font-size: 15px;
     padding: 5px;
+    border: 1px solid #bebebe;
+    border-radius: 2px;
 }
 #newPost textarea {
     width: 100%;
     font-size: 15px;
     padding: 5px;
+    border: 1px solid #bebebe;
+    border-radius: 2px;
 }
 #newPost button {
     background-color: rgb(0,116,177);

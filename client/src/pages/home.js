@@ -41,7 +41,9 @@ function Home() {
                         <NewPost 
                             user={userState}
                         />
-                        <NewsFeed />
+                        <NewsFeed 
+                            user={userState}
+                        />
                     </div>
                     <FriendList />
                 </div>

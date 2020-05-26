@@ -2,20 +2,19 @@ import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import "./UserFeed.css";
 
-function UserFeed() {
-    const [userState, setUserState] = useState({});
+function UserFeed(props) {
     const [postState, setPostState] = useState([]);
 
     useEffect(() => {
-        API.userInfo()
+        getPosts(props.user.id);
+    }, [props.user]);
+
+    const getPosts = id => {
+        API.userFeed(id)
             .then(res => {
-                setUserState(res.data);
-                API.userFeed(res.data.id)
-                    .then(res => {
-                        setPostState(res.data);
-                    });
+                setPostState(res.data);
             });
-    }, []);
+    };
 
     const handleDelete = e => {
         e.preventDefault();
@@ -30,8 +29,8 @@ function UserFeed() {
                         post.url === null ?
                             <li key={post.id}>
                                 <div className="row">
-                                    <img className="userProfile" alt="profile" src={userState.picture} />
-                                    <p>{userState.name}</p>
+                                    <img className="userProfile" alt="profile" src={props.user.picture} />
+                                    <p>{props.user.name}</p>
                                     <i onClick={handleDelete} id={post.id} className="fas fa-trash-alt"></i>
                                 </div>
                                 <div>
@@ -42,8 +41,8 @@ function UserFeed() {
                             :
                             <li key={post.id}>
                                 <div className="row">
-                                    <img className="userProfile" alt="profile" src={userState.picture} />
-                                    <p>{userState.name}</p>
+                                    <img className="userProfile" alt="profile" src={props.user.picture} />
+                                    <p>{props.user.name}</p>
                                     <i onClick={handleDelete} id={post.id} className="fas fa-trash-alt"></i>
                                 </div>
                                 <div>
