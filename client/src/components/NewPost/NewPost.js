@@ -1,4 +1,6 @@
 import React, { useState, useRef } from "react";
+import NewsFeed from "../NewsFeed/NewsFeed";
+import UserFeed from "../UserFeed/UserFeed";
 import "./NewPost.css";
 import API from "../../utils/API";
 
@@ -35,7 +37,7 @@ function NewPost(props) {
                 post: postRef.current.value
             }).then(() => {
                 titleRef.current.value = "";
-                postRef.current.value = ""; 
+                postRef.current.value = "";
             });
         } else {
             API.newPost({
@@ -55,26 +57,40 @@ function NewPost(props) {
     };
 
     return (
-        <div id="newPost">
-            <form>
-                <h3>How do you want to inspire others today?</h3>
-                <div className="row">
-                    <input
-                        required
-                        placeholder="Title"
-                        ref={titleRef}
+        <div>
+            <div id="newPost">
+                <form>
+                    <h3>How do you want to inspire others today?</h3>
+                    <div className="row">
+                        <input
+                            required
+                            placeholder="Title"
+                            ref={titleRef}
+                        />
+                        <button onClick={uploadWidget}>Upload an Image</button>
+                    </div>
+                    <p>Picture URL: {imgState.imgURL}</p>
+                    <div className="row">
+                        <textarea
+                            required
+                            placeholder="Start a post..." ref={postRef}
+                        />
+                    </div>
+                    <div id="buttonDiv">
+                        <button onClick={handleSubmit} type="submit">Post</button>
+                    </div>
+                </form>
+            </div>
+            {
+                props.page.page === "Home" ?
+                    <NewsFeed
+                        user={props.user}
                     />
-                    <button onClick={uploadWidget}>Upload an Image</button>
-                </div>
-                <p>Picture URL: {imgState.imgURL}</p>
-                <div className="row">
-                    <textarea
-                        required
-                        placeholder="Start a post..." ref={postRef}
+                    :
+                    <UserFeed
+                        user={props.user}
                     />
-                </div>
-                <button onClick={handleSubmit} type="submit">Post</button>
-            </form>
+            }
         </div>
     )
 }

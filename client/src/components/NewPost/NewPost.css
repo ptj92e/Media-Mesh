@@ -50,6 +50,10 @@
 #newPost button:hover {
     background-color: rgb(0, 83, 177);
 }
+#buttonDiv {
+    width: 100%;
+    text-align: end;
+}
 @media screen and (max-width: 1200px) {
     #newPost input {
         width: 100%;

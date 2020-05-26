@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
-import Navbar from "../components/Navbar/Navbar";
 import ProfileHead from "../components/ProfileHead/ProfileHead";
 import NewPost from "../components/NewPost/NewPost";
 import FriendList from "../components/FriendList/FriendList";
 import Footer from "../components/Footer/Footer";
-import "./css/profile.css";
 import NewsFeed from "../components/NewsFeed/NewsFeed";
+import UserFeed from "../components/UserFeed/UserFeed";
 import API from "../utils/API";
-import "./css/home.css";
+import "./css/body.css";
 
-function Home() {
+function Body(props) {
     const [signInState, setSignInState] = useState({
         signedIn: true
     });
@@ -26,7 +25,7 @@ function Home() {
                 } else {
                     setUserState(res.data);
                 }
-            })
+            });
     }, []);
 
     if (signInState.signedIn === false) {
@@ -34,7 +33,6 @@ function Home() {
     } else {
         return(
             <div>
-                <Navbar />
                 <div className="row" id="home">
                     <ProfileHead 
                         user={userState}
@@ -42,9 +40,7 @@ function Home() {
                     <div id="homeFeed">
                         <NewPost 
                             user={userState}
-                        />
-                        <NewsFeed 
-                            user={userState}
+                            page={props.page}
                         />
                     </div>
                     <FriendList />
@@ -55,4 +51,4 @@ function Home() {
     };
 };
 
-export default Home;
+export default Body;

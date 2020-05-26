@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import NavbarSearch from "../NavbarSearch/NavbarSearch";
+import Body from "../../pages/body";
 import "./Navbar.css";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import API from "../../utils/API";
 
 function Navbar() {
     const [loginState, setLoginState] = useState({
         loggedIn: true
+    });
+    const [pageState, setPageState] = useState({
+        page: "Home"
     });
 
     const handleClick = e => {
@@ -28,25 +32,38 @@ function Navbar() {
     } else {
         return (
             <div>
-                <nav className="navbar navbar-expand-md">
-                    <div className="container">
+                <div>
+                    <nav className="navbar navbar-expand-md">
+                        <div className="container">
 
-                        <Link to="/home"><img alt="Media Mesh" src="/images/NavLogo.png" /></Link>
-                        <NavbarSearch />
-                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i className="fas fa-sliders-h fa-lg"></i>
-                        </button>
+                            <button onClick={() => {
+                                setPageState({
+                                    page: "Home"
+                                });
+                            }}><img alt="Media Mesh" src="/images/NavLogo.png" /></button>
+                            <NavbarSearch />
+                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <i className="fas fa-sliders-h fa-lg"></i>
+                            </button>
 
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul className="navbar-nav">
-                                <li className="nav-item">
-                                    <Link to="/profile">Profile</Link>
-                                    <a href="#" onClick={handleClick}>Logout</a>
-                                </li>
-                            </ul>
+                            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul className="navbar-nav">
+                                    <li className="nav-item">
+                                        <button onClick={() => {
+                                            setPageState({
+                                                page: "Profile"
+                                            });
+                                        }}>Profile</button>
+                                        <a href="#" onClick={handleClick}>Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </nav>
+                    </nav>
+                </div>
+                <Body 
+                    page={pageState}
+                />
             </div>
         );
     };

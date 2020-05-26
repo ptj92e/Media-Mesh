@@ -21,6 +21,14 @@
 .navbar a:focus {
     outline: 0;
 }
+.navbar button {
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+.navbar button:hover {
+    color: rgb(194,242,220);
+}
 .navbar button:focus {
     outline: 0;
 }
