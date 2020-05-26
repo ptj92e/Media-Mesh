@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import API from "../../utils/API";
 import "./ProfileHead.css";
 
-function ProfileHead() {
+function ProfileHead(props) {
     const [userState, setUserState] = useState({});
+
     const uploadWidget = () => {
         window.cloudinary.openUploadWidget({
             cloud_name: "dr74dmsmp",
@@ -26,11 +27,8 @@ function ProfileHead() {
 
 
     useEffect(() => {
-        API.userInfo()
-            .then(res => {
-                setUserState(res.data);
-            });
-    }, []);
+        setUserState(props.user);
+    }, [props.user]);
 
     return (
         <div id="profileInfo">

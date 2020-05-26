@@ -35,7 +35,9 @@ function Profile() {
             <div>
                 <Navbar />
                 <div className="row" id="profile">
-                    <ProfileHead />
+                    <ProfileHead 
+                        user={userState}
+                    />
                     <div id="profileFeed">
                         <NewPost 
                             user={userState}

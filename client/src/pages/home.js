@@ -36,7 +36,9 @@ function Home() {
             <div>
                 <Navbar />
                 <div className="row" id="home">
-                    <ProfileHead />
+                    <ProfileHead 
+                        user={userState}
+                    />
                     <div id="homeFeed">
                         <NewPost 
                             user={userState}
