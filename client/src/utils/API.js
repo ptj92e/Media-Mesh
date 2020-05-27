@@ -27,5 +27,11 @@ export default {
     },
     deletePost: function(id) {
         return axios.delete("/api/post/" + id);
+    },
+    addFriend: function(friendInfo) {
+        return axios.post("/api/friend/" + friendInfo.userId, { id: friendInfo.id });
+    },
+    seeFriends: function(id) {
+        return axios.get("/api/friend/" + id);
     }
 };

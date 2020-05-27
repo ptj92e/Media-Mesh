@@ -7,7 +7,7 @@ function NewsFeed(props) {
 
     useEffect(() => {
         getPosts();
-    }, postState);
+    }, []);
 
     const getPosts = () => {
         API.newsFeed()
@@ -24,8 +24,19 @@ function NewsFeed(props) {
         } else {
             return;
         }
-    }
+    };
 
+    const addFriend = e => {
+        if (props.user.id === JSON.parse(e.target.getAttribute("name"))) {
+            return;
+        } else {
+            API.addFriend({
+                userId: props.user.id,
+                id: JSON.parse(e.target.getAttribute("name"))
+            });
+        }
+    };
+ 
     return (
         <div id="newsFeed">
             <ul>
@@ -34,10 +45,22 @@ function NewsFeed(props) {
                         post.url === null ?
                             <li key={post.id}>
                                 <div className="row">
-                                    <img className="userProfile" alt="profile" src={post.User.picture} />
+                                    <img 
+                                        className="userProfile" alt="profile" 
+                                        src={post.User.picture} 
+                                    />
                                     <p>{post.User.name}</p>
-                                    <i className="fas fa-user-friends"></i>
-                                    <i name={post.User.id} onClick={handleDelete} id={post.id} className="fas fa-trash-alt"></i>
+                                    <i 
+                                        name={post.User.id}
+                                        onClick={addFriend}
+                                        className="fas fa-user-friends"
+                                    />
+                                    <i 
+                                        name={post.User.id} 
+                                        onClick={handleDelete} 
+                                        id={post.id} 
+                                        className="fas fa-trash-alt"
+                                    />
                                 </div>
                                 <div>
                                     <h3>{post.title}</h3>
@@ -47,10 +70,22 @@ function NewsFeed(props) {
                             :
                             <li key={post.id}>
                                 <div className="row">
-                                    <img className="userProfile" alt="profile" src={post.User.picture} />
+                                    <img 
+                                        className="userProfile" alt="profile" 
+                                        src={post.User.picture} 
+                                    />
                                     <p>{post.User.name}</p>
-                                    <i className="fas fa-user-friends"></i>
-                                    <i name={post.User.id} onClick={handleDelete} id={post.id} className="fas fa-trash-alt"></i>
+                                    <i 
+                                        name={post.User.id}
+                                        onCLick={addFriend}
+                                        className="fas fa-user-friends"
+                                    />
+                                    <i 
+                                        name={post.User.id} 
+                                        onClick={handleDelete} 
+                                        id={post.id} 
+                                        className="fas fa-trash-alt"
+                                    />
                                 </div>
                                 <div>
                                     <h3>{post.title}</h3>

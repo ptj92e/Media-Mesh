@@ -4,8 +4,6 @@ import ProfileHead from "../components/ProfileHead/ProfileHead";
 import NewPost from "../components/NewPost/NewPost";
 import FriendList from "../components/FriendList/FriendList";
 import Footer from "../components/Footer/Footer";
-import NewsFeed from "../components/NewsFeed/NewsFeed";
-import UserFeed from "../components/UserFeed/UserFeed";
 import API from "../utils/API";
 import "./css/body.css";
 
@@ -43,7 +41,9 @@ function Body(props) {
                             page={props.page}
                         />
                     </div>
-                    <FriendList />
+                    <FriendList 
+                        user={userState}
+                    />
                 </div>
                 <Footer />
             </div>

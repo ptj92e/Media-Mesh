@@ -59,7 +59,7 @@ function NewPost(props) {
     return (
         <div>
             <div id="newPost">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <h3>How do you want to inspire others today?</h3>
                     <div className="row">
                         <input
@@ -77,7 +77,7 @@ function NewPost(props) {
                         />
                     </div>
                     <div id="buttonDiv">
-                        <button onClick={handleSubmit} type="submit">Post</button>
+                        <button type="submit">Post</button>
                     </div>
                 </form>
             </div>
