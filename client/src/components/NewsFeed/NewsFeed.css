@@ -27,6 +27,17 @@
     margin-bottom: 0px;
     font-size: 12pt;
 }
+.fa-user-friends {
+    margin-top: 2px;
+    position: absolute;
+    top: 5px;
+    right: 35px;
+    color: green;
+}
+.fa-user-friends:hover {
+    cursor: pointer;
+    color: rgb(29, 95, 29);
+}
 .fa-trash-alt {
     margin-top: 2px;
     position: absolute;

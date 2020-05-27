@@ -36,6 +36,7 @@ function NewsFeed(props) {
                                 <div className="row">
                                     <img className="userProfile" alt="profile" src={post.User.picture} />
                                     <p>{post.User.name}</p>
+                                    <i className="fas fa-user-friends"></i>
                                     <i name={post.User.id} onClick={handleDelete} id={post.id} className="fas fa-trash-alt"></i>
                                 </div>
                                 <div>
@@ -48,6 +49,7 @@ function NewsFeed(props) {
                                 <div className="row">
                                     <img className="userProfile" alt="profile" src={post.User.picture} />
                                     <p>{post.User.name}</p>
+                                    <i className="fas fa-user-friends"></i>
                                     <i name={post.User.id} onClick={handleDelete} id={post.id} className="fas fa-trash-alt"></i>
                                 </div>
                                 <div>
