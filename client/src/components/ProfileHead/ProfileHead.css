@@ -24,6 +24,7 @@
 }
 #profileInfo img {
     height: auto;
+    max-height: 150px;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
