@@ -9,7 +9,6 @@ function FriendList(props) {
         API.seeFriends(props.user.id)
             .then(res => {
                 setFriendState(res.data);
-                console.log(friendState);
             });
     }, [props.user]);
 

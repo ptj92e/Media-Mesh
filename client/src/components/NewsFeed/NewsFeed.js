@@ -28,7 +28,6 @@ function NewsFeed(props) {
 
     const addFriend = e => {
         e.preventDefault();
-        console.log(e.target.getAttribute("name"));
         if (props.user.id === JSON.parse(e.target.getAttribute("name"))) {
             return;
         } else {
@@ -79,7 +78,7 @@ function NewsFeed(props) {
                                     <p>{post.User.name}</p>
                                     <i 
                                         name={post.User.id}
-                                        onCLick={addFriend}
+                                        onClick={addFriend}
                                         className="fas fa-user-friends"
                                     />
                                     <i 
@@ -91,7 +90,10 @@ function NewsFeed(props) {
                                 </div>
                                 <div>
                                     <h3>{post.title}</h3>
-                                    <img className="postImage" alt="post" src={post.url} />
+                                    <img
+                                        className="postImage" alt="post" 
+                                        src={post.url} 
+                                    />
                                     <p>{post.post}</p>
                                 </div>
                             </li>
