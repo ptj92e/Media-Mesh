@@ -41,7 +41,7 @@ function Navbar() {
                                     page: "Home"
                                 });
                             }}><img alt="Media Mesh" src="/images/NavLogo.png" /></button>
-                            <NavbarSearch />
+                            {/* <NavbarSearch /> */}
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <i className="fas fa-sliders-h fa-lg"></i>
                             </button>
