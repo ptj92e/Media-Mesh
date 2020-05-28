@@ -27,6 +27,8 @@ function NewsFeed(props) {
     };
 
     const addFriend = e => {
+        e.preventDefault();
+        console.log("clicked");
         if (props.user.id === JSON.parse(e.target.getAttribute("name"))) {
             return;
         } else {
