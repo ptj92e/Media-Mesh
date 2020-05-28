@@ -7,21 +7,21 @@ function Comments(props) {
             <ul>
                 <li className="comments">
                     <div className="row">
-                        <img alt="profile" src="#"/>
+                        <img alt="profile" src={props.user.picture}/>
                         <p>Phillip Jones</p>
                     </div>
                     <p>That looks really great!!</p>
                 </li>
                 <li className="comments">
                     <div className="row">
-                        <img alt="profile" src="#"/>
+                        <img alt="profile" src={props.user.picture}/>
                         <p>Phillip Jones</p>
                     </div>
                     <p>That looks really great!!</p>
                 </li>
                 <li className="comments">
                     <div className="row">
-                        <img alt="profile" src="#"/>
+                        <img alt="profile" src={props.user.picture}/>
                         <p>Phillip Jones</p>
                     </div>
                     <p>That looks really great!!</p>
