@@ -8,7 +8,8 @@ function FriendList(props) {
     useEffect(() => {
         API.seeFriends(props.user.id)
             .then(res => {
-                setFriendState([res]);
+                setFriendState(res.data);
+                console.log(friendState);
             });
     }, [props.user]);
 
@@ -20,8 +21,8 @@ function FriendList(props) {
                     friendState.length === 0 ?
                     <h3>Find who inspires you!</h3>
                     :
-                    friendState[0].data.map(friend =>
-                        <li className="row">
+                    friendState.map(friend =>
+                        <li className="row" key={friend.User.id}>
                             <img 
                                 className="friendImg"
                                 alt="friend" 
