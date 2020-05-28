@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import CommentForm from "../CommentForm/CommentForm";
+import Comments from "../Comments/Comments";
 import API from "../../utils/API";
 import "./NewsFeed.css";
 
@@ -67,6 +69,13 @@ function NewsFeed(props) {
                                     <h3>{post.title}</h3>
                                     <p>{post.post}</p>
                                 </div>
+                                <CommentForm
+                                    user={props.user}
+                                />
+                                <Comments 
+                                    post={post.id}
+                                    user={props.user}
+                                />
                             </li>
                             :
                             <li key={post.id}>
@@ -96,6 +105,13 @@ function NewsFeed(props) {
                                     />
                                     <p>{post.post}</p>
                                 </div>
+                                <CommentForm
+                                    user={props.user}
+                                />
+                                <Comments 
+                                    post={post.id}
+                                    user={props.user}
+                                />
                             </li>
                     )}
             </ul>

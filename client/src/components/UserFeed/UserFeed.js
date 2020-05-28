@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import CommentForm from "../CommentForm/CommentForm";
+import Comments from "../Comments/Comments";
 import API from "../../utils/API";
 import "./UserFeed.css";
 
@@ -37,6 +39,13 @@ function UserFeed(props) {
                                     <h3>{post.title}</h3>
                                     <p>{post.post}</p>
                                 </div>
+                                <CommentForm
+                                    user={props.user}
+                                />
+                                <Comments 
+                                    post={post.id}
+                                    user={props.user}
+                                />
                             </li>
                             :
                             <li key={post.id}>
@@ -50,6 +59,13 @@ function UserFeed(props) {
                                     <img className="postImage" alt="post" src={post.url} />
                                     <p>{post.post}</p>
                                 </div>
+                                <CommentForm
+                                    user={props.user}
+                                />
+                                <Comments 
+                                    post={post.id}
+                                    user={props.user}
+                                />
                             </li>
                     )}
             </ul>

@@ -1,0 +1,13 @@
+#newsFeed .comments {
+    margin: 0px;
+    box-shadow: none;
+    border: none;
+    border-top: 1px solid #bebebe;
+
+}
+#userFeed .comments {
+    margin: 0px;
+    box-shadow: none;
+    border: none;
+    border-top: 1px solid #bebebe;
+}
