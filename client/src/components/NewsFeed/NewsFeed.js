@@ -75,6 +75,7 @@ function NewsFeed(props) {
                                 />
                                 <Comments 
                                     post={post.id}
+                                    comments={post.Comments}
                                     user={props.user}
                                 />
                             </li>
@@ -112,6 +113,7 @@ function NewsFeed(props) {
                                 />
                                 <Comments 
                                     post={post.id}
+                                    comments={post.Comments}
                                     user={props.user}
                                 />
                             </li>

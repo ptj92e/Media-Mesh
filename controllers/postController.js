@@ -40,7 +40,12 @@ module.exports = {
                     model: db.User
                 },
                 {
-                    model: db.Comments
+                    model: db.Comments,
+                    include: [
+                        {
+                            model: db.User
+                        }
+                    ]
                 }
             ],
             order: [
