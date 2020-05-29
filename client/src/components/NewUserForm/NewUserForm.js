@@ -17,8 +17,12 @@ function NewUserForm() {
                 email: emailRef.current.value,
                 password: passRef.current.value,
                 artform: artRef.current.value
-            }).then(() => {
-                return window.location.reload();
+            }).then(res => {
+                if (res.data === "Email in Use") {
+                    alert("Email Already In Use");
+                } else {
+                    return window.location.reload();
+                }
             });
         } else {
             alert("The password fields must match.");
@@ -37,8 +41,8 @@ function NewUserForm() {
                     <input type="password" required placeholder="Confirm Password" ref={confirmRef} />
                 </div>
                 <div className="row">
-                    <select class="custom-select" ref={artRef}>
-                        <option selected>Choose an Artform</option>
+                    <select className="custom-select" ref={artRef}>
+                        <option defaultValue>Choose an Artform</option>
                         <option value="Animation">Animation</option>
                         <option value="Architecture">Architecture</option>
                         <option value="Cinema">Cinema</option>

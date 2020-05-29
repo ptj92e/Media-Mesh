@@ -3,8 +3,22 @@ const bcrypt = require("bcryptjs");
 
 module.exports = {
     newUser: function (req, res) {
-        db.User.create(req.body)
-            .then(dbUser => res.json(dbUser));
+        db.User.findOne({
+            where: {
+                email: req.body.email
+            }
+        }).then(user => {
+            if (user) {
+                res.json("Email in Use");
+            } else {
+                db.User.create(req.body)
+                    .then(dbUser => res.json(dbUser));
+            }
+        }).catch(err => {
+            if (err) {
+                console.log(err);
+            }
+        })
     },
     userInfo: function (req, res) {
         if (req.isAuthenticated() === false) {
