@@ -5,7 +5,7 @@ function CommentItem(props) {
     return (
         <div>
             {
-                props.comment[0] === undefined ?
+                props.comment === undefined ?
                     <div></div>
                     :
                     props.comment.map(comment =>

@@ -26,6 +26,19 @@ module.exports = {
             where: {
                 UserId: req.params.id
             },
+            include: [
+                {
+                    model: db.User
+                },
+                {
+                    model: db.Comments,
+                    include: [
+                        {
+                            model: db.User
+                        }
+                    ]
+                }
+            ],
             order: [
                 ["id", "DESC"]
             ]
