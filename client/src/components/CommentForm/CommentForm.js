@@ -1,17 +1,23 @@
 import React, { useRef } from "react";
 import "./CommentForm.css";
+import API from "../../utils/API";
 
 function CommentForm(props) {
     const commentRef = useRef();
     const handleSubmit = e => {
         e.preventDefault();
-        console.log("Yay");
+        API.newComment({
+            postId: props.post,
+            userId: props.user.id,
+            comment: commentRef.current.value
+        });
     };
 
     return(
         <div id="commentForm">
             <form onSubmit={handleSubmit}>
                 <textarea
+                    required
                     id="comment"
                     ref={commentRef}
                 />

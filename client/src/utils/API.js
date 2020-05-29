@@ -33,5 +33,8 @@ export default {
     },
     seeFriends: function(id) {
         return axios.get("/api/friend/" + id);
+    },
+    newComment: function(commentInfo) {
+        return axios.post("/api/comment/" + commentInfo.postId + "/" + commentInfo.userId, { comment: commentInfo.comment });
     }
 };

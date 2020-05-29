@@ -38,6 +38,9 @@ module.exports = {
             include: [
                 {
                     model: db.User
+                },
+                {
+                    model: db.Comments
                 }
             ],
             order: [

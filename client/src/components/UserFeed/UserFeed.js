@@ -40,6 +40,7 @@ function UserFeed(props) {
                                     <p>{post.post}</p>
                                 </div>
                                 <CommentForm
+                                    post={post.id}
                                     user={props.user}
                                 />
                                 <Comments 
@@ -60,6 +61,7 @@ function UserFeed(props) {
                                     <p>{post.post}</p>
                                 </div>
                                 <CommentForm
+                                    post={post.id}
                                     user={props.user}
                                 />
                                 <Comments 

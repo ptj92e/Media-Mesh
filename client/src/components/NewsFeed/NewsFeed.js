@@ -70,6 +70,7 @@ function NewsFeed(props) {
                                     <p>{post.post}</p>
                                 </div>
                                 <CommentForm
+                                    post={post.id}
                                     user={props.user}
                                 />
                                 <Comments 
@@ -106,6 +107,7 @@ function NewsFeed(props) {
                                     <p>{post.post}</p>
                                 </div>
                                 <CommentForm
+                                    post={post.id}
                                     user={props.user}
                                 />
                                 <Comments 
