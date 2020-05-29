@@ -9,9 +9,14 @@ function CommentItem(props) {
                     <div></div>
                     :
                     props.comment.map(comment =>
-                        <li className="comments">
+                        <li key={comment.id} className="comments">
                             <div className="row">
-                                <img alt="profile" src={comment.User.picture} />
+                            {
+                                        comment.User.picture === null ?
+                                            <img alt="profile" src="/images/picture.png" />
+                                            :
+                                            <img  alt="profile" src={comment.User.picture} />
+                                    }
                                 <p>{comment.User.name}</p>
                             </div>
                             <p>{comment.comment}</p>

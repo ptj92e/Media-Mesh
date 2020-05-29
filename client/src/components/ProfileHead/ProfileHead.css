@@ -12,13 +12,13 @@
     text-align: center;
     position: relative;
 }
-#profileInfo a {
+.fa-portrait {
     position: absolute;
     top: 5px;
     right: 10px;
     color: rgb(0,116,177);
 }
-#profileInfo a:hover {
+.fa-portrait:hover {
     text-decoration: none;
     color: rgb(0, 83, 177);
 }

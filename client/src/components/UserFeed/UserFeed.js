@@ -31,7 +31,12 @@ function UserFeed(props) {
                         post.url === null ?
                             <li key={post.id}>
                                 <div className="row">
-                                    <img className="userProfile" alt="profile" src={props.user.picture} />
+                                    {
+                                        post.User.picture === null ?
+                                            <img className="userProfile" alt="profile" src="/images/picture.png" />
+                                            :
+                                            <img className="userProfile" alt="profile" src={post.User.picture} />
+                                    }
                                     <p>{props.user.name}</p>
                                     <i onClick={handleDelete} id={post.id} className="fas fa-trash-alt"></i>
                                 </div>
@@ -43,7 +48,7 @@ function UserFeed(props) {
                                     post={post.id}
                                     user={props.user}
                                 />
-                                <Comments 
+                                <Comments
                                     post={post.id}
                                     comments={post.Comments}
                                     user={props.user}
@@ -52,7 +57,12 @@ function UserFeed(props) {
                             :
                             <li key={post.id}>
                                 <div className="row">
-                                    <img className="userProfile" alt="profile" src={props.user.picture} />
+                                    {
+                                        post.User.picture === null ?
+                                            <img className="userProfile" alt="profile" src="/images/picture.png" />
+                                            :
+                                            <img className="userProfile" alt="profile" src={post.User.picture} />
+                                    }
                                     <p>{props.user.name}</p>
                                     <i onClick={handleDelete} id={post.id} className="fas fa-trash-alt"></i>
                                 </div>
@@ -65,7 +75,7 @@ function UserFeed(props) {
                                     post={post.id}
                                     user={props.user}
                                 />
-                                <Comments 
+                                <Comments
                                     post={post.id}
                                     comments={post.Comments}
                                     user={props.user}

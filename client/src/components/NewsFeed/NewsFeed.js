@@ -39,7 +39,7 @@ function NewsFeed(props) {
             });
         }
     };
- 
+
     return (
         <div id="newsFeed">
             <ul>
@@ -48,20 +48,22 @@ function NewsFeed(props) {
                         post.url === null ?
                             <li key={post.id}>
                                 <div className="row">
-                                    <img 
-                                        className="userProfile" alt="profile" 
-                                        src={post.User.picture} 
-                                    />
+                                    {
+                                        post.User.picture === null ?
+                                            <img className="userProfile" alt="profile" src="/images/picture.png" />
+                                            :
+                                            <img className="userProfile" alt="profile" src={post.User.picture} />
+                                    }
                                     <p>{post.User.name}</p>
-                                    <i 
+                                    <i
                                         name={post.User.id}
                                         onClick={addFriend}
                                         className="fas fa-user-friends"
                                     />
-                                    <i 
-                                        name={post.User.id} 
-                                        onClick={handleDelete} 
-                                        id={post.id} 
+                                    <i
+                                        name={post.User.id}
+                                        onClick={handleDelete}
+                                        id={post.id}
                                         className="fas fa-trash-alt"
                                     />
                                 </div>
@@ -73,7 +75,7 @@ function NewsFeed(props) {
                                     post={post.id}
                                     user={props.user}
                                 />
-                                <Comments 
+                                <Comments
                                     post={post.id}
                                     comments={post.Comments}
                                     user={props.user}
@@ -82,28 +84,30 @@ function NewsFeed(props) {
                             :
                             <li key={post.id}>
                                 <div className="row">
-                                    <img 
-                                        className="userProfile" alt="profile" 
-                                        src={post.User.picture} 
-                                    />
+                                    {
+                                        post.User.picture === null ?
+                                            <img className="userProfile" alt="profile" src="/images/picture.png" />
+                                            :
+                                            <img className="userProfile" alt="profile" src={post.User.picture} />
+                                    }
                                     <p>{post.User.name}</p>
-                                    <i 
+                                    <i
                                         name={post.User.id}
                                         onClick={addFriend}
                                         className="fas fa-user-friends"
                                     />
-                                    <i 
-                                        name={post.User.id} 
-                                        onClick={handleDelete} 
-                                        id={post.id} 
+                                    <i
+                                        name={post.User.id}
+                                        onClick={handleDelete}
+                                        id={post.id}
                                         className="fas fa-trash-alt"
                                     />
                                 </div>
                                 <div>
                                     <h3>{post.title}</h3>
                                     <img
-                                        className="postImage" alt="post" 
-                                        src={post.url} 
+                                        className="postImage" alt="post"
+                                        src={post.url}
                                     />
                                     <p>{post.post}</p>
                                 </div>
@@ -111,7 +115,7 @@ function NewsFeed(props) {
                                     post={post.id}
                                     user={props.user}
                                 />
-                                <Comments 
+                                <Comments
                                     post={post.id}
                                     comments={post.Comments}
                                     user={props.user}

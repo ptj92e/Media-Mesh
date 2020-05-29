@@ -32,12 +32,13 @@ function ProfileHead(props) {
 
     return (
         <div id="profileInfo">
-            {userState.picture === null ?
-                <h3>Upload A Profile Picture!</h3>
+            {
+                userState.picture === null ?
+                <img alt="profile" src="/images/picture.png" />
                 :
                 <img alt="profile" src={userState.picture} />
             }
-            <a href="#"><i onClick={uploadWidget} className="fas fa-portrait fa-2x"></i></a>
+            <i onClick={uploadWidget} className="fas fa-portrait fa-2x"></i>
             <h3 id={userState.id}>{userState.name}</h3>
             <p>{userState.artform}</p>
         </div>
