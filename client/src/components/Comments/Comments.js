@@ -5,14 +5,10 @@ import "./Comments.css";
 function Comments(props) {
     return(
         <div>
-            <ul>{
-                    props.comments === undefined ?
-                    <div></div>
-                    :
-                    <CommentItem
-                        comment={props.comments}
-                    />
-                }
+            <ul>
+                <CommentItem
+                    comment={props.comments}
+                />
             </ul>
         </div>
     )
