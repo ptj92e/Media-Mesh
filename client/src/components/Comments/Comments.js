@@ -7,6 +7,8 @@ function Comments(props) {
         <div>
             <ul>
                 <CommentItem
+                    user={props.user}
+                    post={props.post}
                     comment={props.comments}
                 />
             </ul>

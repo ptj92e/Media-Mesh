@@ -36,5 +36,8 @@ export default {
     },
     newComment: function(commentInfo) {
         return axios.post("/api/comment/" + commentInfo.postId + "/" + commentInfo.userId, { comment: commentInfo.comment });
+    },
+    deleteComment: function(commentInfo) {
+        return axios.delete("/api/comment/" + commentInfo.id);
     }
 };

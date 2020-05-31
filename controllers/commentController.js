@@ -7,5 +7,12 @@ module.exports = {
             PostId: req.params.postId,
             UserId: req.params.userId
         });
+    },
+    deleteComment: function(req, res) {
+        db.Comments.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
     }
 }
