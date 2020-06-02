@@ -6,10 +6,11 @@ import "./NewsFeed.css";
 
 function NewsFeed(props) {
     const [postState, setPostState] = useState([]);
+    let [deletePost, setDeletePost] = useState(0);
 
     useEffect(() => {
         getPosts();
-    }, []);
+    }, [props.count, deletePost]);
 
     const getPosts = () => {
         API.newsFeed()
@@ -22,7 +23,7 @@ function NewsFeed(props) {
         e.preventDefault();
         if (props.user.id === parseInt(e.target.getAttribute("name"))) {
             API.deletePost(e.target.id);
-            getPosts();
+            setDeletePost(deletePost += 1);
         } else {
             return;
         }

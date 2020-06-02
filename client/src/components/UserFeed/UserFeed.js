@@ -6,10 +6,11 @@ import "./UserFeed.css";
 
 function UserFeed(props) {
     const [postState, setPostState] = useState([]);
+    let [deletePost, setDeletePost] = useState(0);
 
     useEffect(() => {
         getPosts(props.user.id);
-    }, [props.user]);
+    }, [props.user, props.count, deletePost]);
 
     const getPosts = id => {
         API.userFeed(id)
@@ -21,6 +22,7 @@ function UserFeed(props) {
     const handleDelete = e => {
         e.preventDefault();
         API.deletePost(e.target.id);
+        setDeletePost(deletePost += 1);
     }
 
     return (

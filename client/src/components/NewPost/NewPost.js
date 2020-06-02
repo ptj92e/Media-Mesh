@@ -10,6 +10,7 @@ function NewPost(props) {
     const [imgState, setImgState] = useState({
         imgURL: ""
     });
+    let [count, setCount] = useState(0);
 
     const uploadWidget = () => {
         window.cloudinary.openUploadWidget({
@@ -38,6 +39,7 @@ function NewPost(props) {
             }).then(() => {
                 titleRef.current.value = "";
                 postRef.current.value = "";
+                setCount(count += 1);
             });
         } else {
             API.newPost({
@@ -45,13 +47,13 @@ function NewPost(props) {
                 title: titleRef.current.value,
                 post: postRef.current.value,
                 picture: imgState.imgURL
-            }).then(res => {
-                console.log(res);
+            }).then(() => {
                 setImgState({
                     imgUrl: ""
                 });
                 titleRef.current.value = "";
                 postRef.current.value = "";
+                setCount(count += 1);
             });
         };
     };
@@ -85,10 +87,12 @@ function NewPost(props) {
                 props.page.page === "Home" ?
                     <NewsFeed
                         user={props.user}
+                        count={count}
                     />
                     :
                     <UserFeed
                         user={props.user}
+                        count={count}
                     />
             }
         </div>
