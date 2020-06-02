@@ -29,14 +29,6 @@ module.exports = {
             include: [
                 {
                     model: db.User
-                },
-                {
-                    model: db.Comments,
-                    include: [
-                        {
-                            model: db.User
-                        }
-                    ]
                 }
             ],
             order: [
@@ -51,14 +43,6 @@ module.exports = {
             include: [
                 {
                     model: db.User
-                },
-                {
-                    model: db.Comments,
-                    include: [
-                        {
-                            model: db.User
-                        }
-                    ]
                 }
             ],
             order: [

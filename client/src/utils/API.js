@@ -39,5 +39,8 @@ export default {
     },
     deleteComment: function(commentInfo) {
         return axios.delete("/api/comment/" + commentInfo.id);
+    },
+    getComments: function(id) {
+        return axios.get("/api/comment/" + id);
     }
 };

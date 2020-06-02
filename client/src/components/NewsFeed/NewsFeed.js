@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import CommentForm from "../CommentForm/CommentForm";
-import Comments from "../Comments/Comments";
 import API from "../../utils/API";
 import "./NewsFeed.css";
 
@@ -73,12 +72,7 @@ function NewsFeed(props) {
                                     <p>{post.post}</p>
                                 </div>
                                 <CommentForm
-                                    post={post.id}
-                                    user={props.user}
-                                />
-                                <Comments
                                     post={post}
-                                    comments={post.Comments}
                                     user={props.user}
                                 />
                             </li>
@@ -113,12 +107,7 @@ function NewsFeed(props) {
                                     <p>{post.post}</p>
                                 </div>
                                 <CommentForm
-                                    post={post.id}
-                                    user={props.user}
-                                />
-                                <Comments
                                     post={post}
-                                    comments={post.Comments}
                                     user={props.user}
                                 />
                             </li>

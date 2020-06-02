@@ -50,11 +50,6 @@ function UserFeed(props) {
                                     post={post.id}
                                     user={props.user}
                                 />
-                                <Comments
-                                    post={post.id}
-                                    comments={post.Comments}
-                                    user={props.user}
-                                />
                             </li>
                             :
                             <li key={post.id}>
@@ -74,12 +69,7 @@ function UserFeed(props) {
                                     <p>{post.post}</p>
                                 </div>
                                 <CommentForm
-                                    post={post.id}
-                                    user={props.user}
-                                />
-                                <Comments
-                                    post={post.id}
-                                    comments={post.Comments}
+                                    post={post}
                                     user={props.user}
                                 />
                             </li>
