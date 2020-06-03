@@ -1,6 +1,5 @@
 #profileInfo {
-    min-height: 265px;
-    max-height: 290px;
+    max-height: 287px;
     width: 20%;
     padding: 10px;
     background-color: #fff;
@@ -34,6 +33,7 @@
 }
 @media screen and (max-width: 600px) {
     #profileInfo {
+        height: auto;
         width: 30%;
     }
 }
