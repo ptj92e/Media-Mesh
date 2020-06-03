@@ -40,4 +40,7 @@
     .friendImg {
         height: 25px;
     }
+    #friendList ul {
+        height: 150px;
+    }
 }
