@@ -15,8 +15,8 @@ function CommentForm(props) {
             comment: commentRef.current.value
         }).then(() => {
             commentRef.current.value = "";
+            setNewCount(newCount += 1);
         });
-        setNewCount(newCount += 1);
     };
 
     return(

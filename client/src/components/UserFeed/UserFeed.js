@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import CommentForm from "../CommentForm/CommentForm";
-import Comments from "../Comments/Comments";
 import API from "../../utils/API";
 import "./UserFeed.css";
 

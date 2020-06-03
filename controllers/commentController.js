@@ -6,8 +6,8 @@ module.exports = {
             comment: req.body.comment,
             PostId: req.params.postId,
             UserId: req.params.userId
-        }).then(() => {
-            res.status(200);
+        }).then(dbComment => {
+            res.json(dbComment);
         });
     },
     deleteComment: function(req, res) {
@@ -15,8 +15,6 @@ module.exports = {
             where: {
                 id: req.params.id
             }
-        }).then(() => {
-            res.status(200);
         });
     },
     getComments: function(req, res) {
@@ -28,6 +26,9 @@ module.exports = {
                 {
                     model: db.User
                 }
+            ],
+            order: [
+                ["id", "DESC"]
             ]
         }).then(dbComments => {
             res.json(dbComments);
