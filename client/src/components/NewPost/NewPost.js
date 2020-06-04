@@ -5,13 +5,16 @@ import "./NewPost.css";
 import API from "../../utils/API";
 
 function NewPost(props) {
+    //These variables make references to the title of the post and the body of the post
     const titleRef = useRef();
     const postRef = useRef();
+    //This contains the url of the picture uploaded
     const [imgState, setImgState] = useState({
         imgURL: ""
     });
+    //This calls the news feed/user feed to re-render when a new post is added
     let [count, setCount] = useState(0);
-
+    //This pulls up the upload widget and makes a call to upload the picture to cloudinary. Then, the response is saved to the imageState
     const uploadWidget = () => {
         window.cloudinary.openUploadWidget({
             cloud_name: "dr74dmsmp",
@@ -28,7 +31,7 @@ function NewPost(props) {
                 }
             });
     };
-
+    //Handle Submit creates a new post and checks to see if the post has a picture or not. count is then incrementd to call the news feed/user feed to re-render
     const handleSubmit = e => {
         e.preventDefault();
         if (imgState.imgURL === "") {
@@ -84,6 +87,7 @@ function NewPost(props) {
                 </form>
             </div>
             {
+                //This ternary operator determines which post feed to render. If it is home, the newsfeed is rendered. If it isn't, the userfeed is rendered.
                 props.page.page === "Home" ?
                     <NewsFeed
                         user={props.user}

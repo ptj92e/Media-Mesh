@@ -3,8 +3,9 @@ import API from "../../utils/API";
 import "./FriendList.css";
 
 function FriendList(props) {
+    //This contains the list of all of the friends a user has
     const [friendState, setFriendState] = useState([]);
-
+    //This useEffect is called when the user changes, the friend list is populated
     useEffect(() => {
         API.seeFriends(props.user.id)
             .then(res => {
@@ -17,6 +18,7 @@ function FriendList(props) {
             <h3>Your Friends</h3>
             <ul>
                 {
+                    //If a user has no friends, a message is rendered. If the user has a friends, that list is mapped over to populate the friend list. 
                     friendState.length === 0 ?
                         <h3>Find who inspires you!</h3>
                         :

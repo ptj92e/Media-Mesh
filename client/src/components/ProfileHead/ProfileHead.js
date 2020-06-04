@@ -4,7 +4,7 @@ import "./ProfileHead.css";
 
 function ProfileHead(props) {
     const [userState, setUserState] = useState({});
-
+    //This allows the user to change their profile picture
     const uploadWidget = () => {
         window.cloudinary.openUploadWidget({
             cloud_name: "dr74dmsmp",
@@ -24,8 +24,7 @@ function ProfileHead(props) {
                 }
             });
     };
-
-
+    //This useEffect is called to gather the user's information
     useEffect(() => {
         setUserState(props.user);
     }, [props.user]);
@@ -33,6 +32,7 @@ function ProfileHead(props) {
     return (
         <div id="profileInfo">
             {
+                //If the user doesn't have a profile picture, a stock one is provided.
                 userState.picture === null ?
                 <img alt="profile" src="/images/picture.png" />
                 :

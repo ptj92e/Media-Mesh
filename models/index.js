@@ -1,3 +1,4 @@
+//This file configures the app to use the mySQL database with sequelize
 "use strict";
 
 var fs = require("fs");

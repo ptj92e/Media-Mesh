@@ -6,13 +6,15 @@ import { Redirect } from "react-router-dom";
 import API from "../../utils/API";
 
 function Navbar() {
+    //This is set to true to see if the user is logged in
     const [loginState, setLoginState] = useState({
         loggedIn: true
     });
+    //This checks to see which page is rendered
     const [pageState, setPageState] = useState({
         page: "Home"
     });
-
+    //Once this is clicked, the user is logged out and the session they are on expires. Logged in state is then set to false to redirect them to the landing page
     const handleClick = e => {
         e.preventDefault();
         API.signOut()
@@ -26,7 +28,7 @@ function Navbar() {
                 }
             });
     };
-
+    //This redirects users to the landing page once they log out
     if (loginState.loggedIn === false) {
         return <Redirect to="/" />
     } else {

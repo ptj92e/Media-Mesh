@@ -1,4 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
+    //This is setting up the Post model to be used
     const Posts = sequelize.define("Posts", {
         title: {
             type: DataTypes.STRING,
@@ -12,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING
         }
     });
-
+    //This is establishing the foreign keys so that each post belongs to a user and each post has many comments
     Posts.associate = function(models) {
         Posts.hasMany(models.Comments, {
             onDelete: "cascade"

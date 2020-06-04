@@ -1,4 +1,5 @@
 require('dotenv').config();
+//This module tells the app which database configuration to use depending on the stage of production. 
 module.exports = {
     "development": {
         "username": process.env.DB_USER,

@@ -1,5 +1,5 @@
 import axios from "axios";
-
+//These exports are the methods we are using to call to the api on the backend. We are using axios to make that call. Each name aligns with what is being executed with the method.
 export default {
     signIn: function(userData) {
         return axios.post("/api/login", userData);

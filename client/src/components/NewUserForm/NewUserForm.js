@@ -3,12 +3,13 @@ import API from "../../utils/API";
 import "./NewUserForm.css";
 
 function NewUserForm() {
+    //These refer to the different input fields to create a new user.
     const nameRef = useRef();
     const emailRef = useRef();
     const passRef = useRef();
     const confirmRef = useRef();
     const artRef = useRef();
-
+    //If the passwords do not match, an alert appears on the screen. If they do, a new user is made if the email is not in use. 
     const handleSubmit = e => {
         e.preventDefault();
         if (passRef.current.value === confirmRef.current.value) {

@@ -4,20 +4,22 @@ import API from "../../utils/API";
 import "./UserFeed.css";
 
 function UserFeed(props) {
+    //This contains all of the user's posts
     const [postState, setPostState] = useState([]);
+    //This is incremented to make the component re-render
     let [deletePost, setDeletePost] = useState(0);
-
+    //This useEffect is called to gather the user's posts
     useEffect(() => {
         getPosts(props.user.id);
     }, [props.user, props.count, deletePost]);
-
+    //This collects the user's posts
     const getPosts = id => {
         API.userFeed(id)
             .then(res => {
                 setPostState(res.data);
             });
     };
-
+    //This makes a call to delete a post if the user wants to
     const handleDelete = e => {
         e.preventDefault();
         API.deletePost(e.target.id);
@@ -28,6 +30,7 @@ function UserFeed(props) {
         <div id="userFeed">
             <ul>
                 {
+                    //This checks to see if the post has an image. If it does not, the first case is rendered. If it does, the second case is. 
                     postState.map(post =>
                         post.url === null ?
                             <li key={post.id}>

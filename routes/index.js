@@ -1,8 +1,10 @@
+//Requiring all necessary modules
 const path = require("path");
 const router = require("express").Router();
+//Requires routes
 const apiRoutes = require("./api");
 
-// API Routes
+// API Routes and adds "/api" to the route name
 router.use("/api", apiRoutes);
 
 // If no API routes are hit, send the React app
